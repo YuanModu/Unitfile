@@ -18,7 +18,7 @@ ExecStartPre=/usr/bin/docker container create \
     --mount source=wagtail-webapp,target=/usr/share/webapp \
     --publish %i:5432:5432/tcp \
     --publish %i:8000:8000/tcp \
-    yuanmodu/wagtail
+    wagtail
 ExecStart=/usr/bin/docker container start --attach wagtail
 
 ExecStop=/usr/bin/docker container stop wagtail
