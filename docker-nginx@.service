@@ -17,7 +17,7 @@ ExecStartPre=/usr/bin/docker container create \
     --read-only \
     --mount source=nginx-config,target=/etc/nginx,readonly \
     --mount source=nginx-cache,target=/var/cache/nginx \
-    --mount source=nginx-pid,target=/var/run \
+    --tmpfs /run \
     --publish %i:80:80/tcp \
     --publish %i:8000:8000/tcp \
     nginx:latest
