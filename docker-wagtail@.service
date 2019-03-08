@@ -16,6 +16,7 @@ ExecStartPre=/usr/bin/docker container create \
     --name wagtail \
     --read-only \
     --mount source=wagtail-webapp,target=/code \
+    --tmpfs /tmp \
     --publish %i:5432:5432/tcp \
     --publish %i:8000:8000/tcp \
     wagtail
