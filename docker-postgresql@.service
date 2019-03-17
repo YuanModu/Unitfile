@@ -22,7 +22,7 @@ ExecStartPre=/usr/bin/docker container create \
     --env POSTGRES_DB="${POSTGRES_DB}" \
     --env POSTGRES_PASSWORD="${POSTGRES_PASSWORD}" \
     --publish %i:5432:5432/tcp \
-    postgres:latest
+    postgres:alpine
 ExecStart=/usr/bin/docker container start --attach postgresql
 
 ExecStop=/usr/bin/docker container stop postgresql

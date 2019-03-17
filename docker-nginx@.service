@@ -20,7 +20,7 @@ ExecStartPre=/usr/bin/docker container create \
     --tmpfs /run \
     --publish %i:80:80/tcp \
     --publish %i:8000:8000/tcp \
-    nginx:latest
+    nginx:alpine
 ExecStart=/usr/bin/docker container start --attach nginx
 
 ExecStop=/usr/bin/docker container stop nginx
