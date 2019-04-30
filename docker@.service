@@ -1,0 +1,19 @@
+[Unit]
+Description=Containerized %i
+
+After=docker.service
+
+[Service]
+Type=simple
+
+TimeoutStartSec=0
+
+KillMode=none
+
+ExecStart=/usr/bin/docker container start --attach %i
+
+ExecStop=/usr/bin/docker container stop %i
+ExecStopPost=/usr/bin/docker container rm %i
+
+[Install]
+WantedBy=multi-user.target
