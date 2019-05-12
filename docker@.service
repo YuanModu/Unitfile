@@ -1,5 +1,5 @@
 [Unit]
-Description=Containerized %i
+Description=Container %i
 
 After=docker.service
 
